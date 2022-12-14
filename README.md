@@ -73,15 +73,19 @@ public class SpringBootAppApplication {
 
 run the file to test if it works, go to localhost:8080 in the browser, you should see "Hello spring boot application"
 
----- build the app
+
+
+---- Build the app & test it
 
 - At the root folder:
 
 mvn install
 
-./mvnw package && java -jar target/gs-spring-boot-docker-0.1.0.jar
+java -jar target/spring-boot-docker.jar
 
 
----- run the app with docker
+---- Build & run the app with docker
+		
+docker build -t springboot:lastest .		     --> create image with that tag
 
-docker build -t springio/gs-spring-boot-docker .		--> create image with that tag
+docker run -p 8081:8080 springboot:lastest
